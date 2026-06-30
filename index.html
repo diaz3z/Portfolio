@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Zaid &mdash; Computer Vision Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="scroll-progress" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div
+      class="floating-lines-container"
+      data-floating-lines
+      aria-hidden="true"
+    ></div>
+
+    <nav id="site-nav" class="pill-nav-shell">
+      <div
+        class="wrap pill-nav-container"
+        data-pill-nav
+        data-active-href="#hero"
+      >
+        <div class="pill-nav" aria-label="Primary">
+          <a
+            class="pill-logo"
+            href="#hero"
+            aria-label="Mohammad Zaid home"
+          >
+            <span>MZ</span>
+          </a>
+
+          <div class="pill-nav-items desktop-only">
+            <ul class="pill-list nav-links" role="menubar">
+              <li role="none"><a class="pill is-active" role="menuitem" href="#hero"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Home</span><span class="pill-label-hover" aria-hidden="true">Home</span></span></a></li>
+              <li role="none"><a class="pill" role="menuitem" href="#values"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Approach</span><span class="pill-label-hover" aria-hidden="true">Approach</span></span></a></li>
+              <li role="none"><a class="pill" role="menuitem" href="#services"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Services</span><span class="pill-label-hover" aria-hidden="true">Services</span></span></a></li>
+              <li role="none"><a class="pill" role="menuitem" href="#experience"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Experience</span><span class="pill-label-hover" aria-hidden="true">Experience</span></span></a></li>
+              <li role="none"><a class="pill" role="menuitem" href="#projects"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Work</span><span class="pill-label-hover" aria-hidden="true">Work</span></span></a></li>
+              <li role="none"><a class="pill" role="menuitem" href="#blogs"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Blogs</span><span class="pill-label-hover" aria-hidden="true">Blogs</span></span></a></li>
+              <li role="none"><a class="pill pill-contact" role="menuitem" href="#contact"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Contact</span><span class="pill-label-hover" aria-hidden="true">Contact</span></span></a></li>
+            </ul>
+          </div>
+
+          <button
+            class="mobile-menu-button mobile-only"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu-popover mobile-only" aria-hidden="true">
+          <ul class="mobile-menu-list">
+            <li><a class="mobile-menu-link is-active" href="#hero">Home</a></li>
+            <li><a class="mobile-menu-link" href="#values">Approach</a></li>
+            <li><a class="mobile-menu-link" href="#services">Services</a></li>
+            <li><a class="mobile-menu-link" href="#experience">Experience</a></li>
+            <li><a class="mobile-menu-link" href="#projects">Work</a></li>
+            <li><a class="mobile-menu-link" href="#blogs">Blogs</a></li>
+            <li><a class="mobile-menu-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="hero">
+        <div
+          class="metaballs-container"
+          data-metaballs
+          data-color="#c8f060"
+          data-cursor-ball-color="#ece7df"
+          data-cursor-ball-size="2"
+          data-ball-count="14"
+          data-animation-size="32"
+          data-clump-factor="0.82"
+          data-speed="0.24"
+          aria-hidden="true"
+        ></div>
+        <div class="wrap">
+          <div class="hero-top reveal">
+            <p class="hero-tag">
+              <span class="avail-dot"></span>Currently available for freelance
+              and consulting
+            </p>
+          </div>
+
+          <div class="hero-body">
+            <div class="hero-left reveal" style="--delay: 0.06s">
+              <h1 class="hero-title">
+                Computer<br /><em>Vision</em><br />Engineer
+              </h1>
+              <p class="hero-sub">
+                I build practical computer vision systems with a focus on real-world use and deployment.
+              </p>
+              <p class="hero-availability">
+                Available for prototype builds, CV system debugging, model
+                optimization, and focused consulting on real-world deployment
+                decisions.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-dark" href="#projects">View selected work</a>
+                <a class="btn btn-light" href="#contact"
+                  >Start a conversation</a
+                >
+              </div>
+              <div class="hero-links">
+                <a
+                  class="hero-link"
+                  href="https://www.linkedin.com/in/mohammad-zaid-3z/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >LinkedIn</a
+                >
+                <a
+                  class="hero-link"
+                  href="https://github.com/diaz3z"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a class="hero-link" href="mailto:mdzaid.dev@gmail.com"
+                  >Email</a
+                >
+              </div>
+            </div>
+
+            <div class="hero-right reveal" style="--delay: 0.12s">
+              <div class="portrait-block">
+                <div class="portrait-badge">
+                  Open to select freelance projects
+                </div>
+                <div
+                  class="portrait-frame tilted-card-figure"
+                  data-tilted-card
+                  data-rotate-amplitude="10"
+                  data-scale-on-hover="1.04"
+                  data-caption-text="Mohammad Zaid"
+                >
+                  <img
+                    class="portrait-img"
+                    src="images/About Section 2.jpg"
+                    alt="Mohammad Zaid portrait"
+                    decoding="async"
+                  />
+                  <div class="tilted-card-overlay" aria-hidden="true">
+                    <span>Computer Vision Engineer</span>
+                  </div>
+                  <figcaption class="tilted-card-caption">Mohammad Zaid</figcaption>
+                </div>
+                <div class="portrait-meta">
+                  <div>
+                    <p class="portrait-name">Mohammad Zaid</p>
+                    <p class="portrait-caption">
+                      Computer Vision Engineer &nbsp;&middot;&nbsp; Hyderabad,
+                      India
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-strip reveal" style="--delay: 0.2s">
+            <div class="stat-cell">
+              <div class="stat-num">PROTOTYPE</div>
+              <div class="stat-label">
+                Focused prototype builds for applied AI and computer vision
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">EDGE</div>
+              <div class="stat-label">
+                Deployment-aware optimization and runtime decision support
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">SHIP</div>
+              <div class="stat-label">
+                Clear scoping, practical tradeoffs, and production-minded builds
+              </div>
+            </div>
+          </div>
+
+          <div class="pressure-band reveal" style="--delay: 0.24s">
+            <div
+              class="text-pressure"
+              data-text-pressure
+              data-text="Applied Vision"
+              data-min-font-size="30"
+              data-text-color="#ece7df"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fit">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Who I help</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                Best fit for teams that need<br /><em
+                  >applied AI shipped clearly</em
+                >
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              I work best where there is a real operational problem, a defined
+              outcome, and a need for practical technical judgment rather than
+              generic AI experimentation.
+            </p>
+          </div>
+
+          <div class="fit-grid">
+            <article class="fit-card reveal">
+              <div class="fit-media">
+                <img
+                  class="card-image"
+                  src="images/Startups Validating a CV Product.png"
+                  alt="Startup team validating a computer vision product concept"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="fit-title">Startups validating a CV product</h3>
+              <p class="fit-body">
+                Founders who need a credible prototype, technical direction, and
+                honest feasibility decisions before investing in a bigger build.
+              </p>
+            </article>
+            <article class="fit-card reveal" style="--delay: 0.06s">
+              <div class="fit-media">
+                <img
+                  class="card-image"
+                  src="images/Manufacturing and Inspection Teams.png"
+                  alt="Manufacturing inspection workflow with computer vision"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="fit-title">Teams testing computer vision workflows</h3>
+              <p class="fit-body">
+                Teams testing whether applied computer vision can solve a clearly defined workflow problem in a reliable way.
+              </p>
+            </article>
+            <article class="fit-card reveal" style="--delay: 0.12s">
+              <div class="fit-media">
+                <img
+                  class="card-image"
+                  src="images/AI Teams Needing a Focused Builder.png"
+                  alt="Focused AI engineer working on a computer vision pipeline"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="fit-title">AI teams needing a focused builder</h3>
+              <p class="fit-body">
+                Teams that already know the problem and need someone to quickly
+                own a prototype, benchmark models, or improve edge deployment
+                performance.
+              </p>
+            </article>
+            <article class="fit-card reveal" style="--delay: 0.18s">
+              <div class="fit-media">
+                <img
+                  class="card-image"
+                  src="images/Founders testing a narrow use case.png"
+                  alt="Founder validating a narrow computer vision use case"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="fit-title">Founders testing a narrow use case</h3>
+              <p class="fit-body">
+                Best for scoped engagements where success means one prototype,
+                one workflow, one deployment path, or one optimization problem
+                solved well.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="values">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Approach</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                How I think<br /><em>about the work</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              My freelance journey is new. My technical experience is not.
+              Here's what stays constant regardless.
+            </p>
+          </div>
+
+          <div class="values-grid">
+            <div class="value-cell reveal">
+              <span class="value-num">01</span>
+              <h3 class="value-title">Honest Scope</h3>
+              <p class="value-body">
+                I won't pretend freelance history I don't have. My experience is
+                real and built through hands-on company work &mdash; I'm
+                transparent about the difference.
+              </p>
+            </div>
+            <div class="value-cell reveal" style="--delay: 0.06s">
+              <span class="value-num">02</span>
+              <h3 class="value-title">Production Mindset</h3>
+              <p class="value-body">
+                I think beyond the demo. Data quality, inference speed,
+                deployment constraints &mdash; I care about whether the system
+                will hold up in actual use.
+              </p>
+            </div>
+            <div class="value-cell reveal" style="--delay: 0.12s">
+              <span class="value-num">03</span>
+              <h3 class="value-title">Direct Ownership</h3>
+              <p class="value-body">
+                You work with the builder, not a handoff chain. From problem
+                framing to execution &mdash; clear updates, practical tradeoffs,
+                real decisions.
+              </p>
+            </div>
+            <div class="value-cell reveal" style="--delay: 0.18s">
+              <span class="value-num">04</span>
+              <h3 class="value-title">Focused Fit</h3>
+              <p class="value-body">
+                Best for prototyping, model optimization, debugging, edge deployment,
+                and custom CV or GenAI prototypes with clearly defined goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Services</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                What I can<br /><em>help you build</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              I'm most useful as a technically strong individual contributor for
+              a clearly defined AI task, prototype, or improvement project.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-cell reveal">
+              <span class="service-num">01</span>
+              <div class="service-media">
+                <img
+                  class="card-image"
+                  src="images/Services Computer Vision Systems.png"
+                  alt="Computer vision systems service visual"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="service-title">Computer Vision Systems</h3>
+              <p class="service-body">
+                End-to-end detection, segmentation, keypoint, classification, and tracking pipelines for applied vision systems.
+                Dataset curation, training, and evaluation included.
+              </p>
+              <div class="tags">
+                <span class="tag">YOLOv8</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">TensorFlow</span>
+              </div>
+            </div>
+            <div class="service-cell reveal" style="--delay: 0.08s">
+              <span class="service-num">02</span>
+              <div class="service-media">
+                <img
+                  class="card-image"
+                  src="images/Services Edge AI and Optimization.png"
+                  alt="Edge AI and optimization service visual"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="service-title">Edge AI &amp; Optimization</h3>
+              <p class="service-body">
+                Export, runtime, and hardware-specific optimization to make
+                practical CV models faster and deployable. Benchmarking and
+                profiling included.
+              </p>
+              <div class="tags">
+                <span class="tag">TensorRT</span>
+                <span class="tag">ONNX Runtime</span>
+                <span class="tag">Quantization</span>
+              </div>
+            </div>
+            <div class="service-cell reveal" style="--delay: 0.04s">
+              <span class="service-num">03</span>
+              <div class="service-media">
+                <img
+                  class="card-image"
+                  src="images/Services GenAI Prototypes.png"
+                  alt="GenAI prototypes service visual"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="service-title">GenAI Prototypes</h3>
+              <p class="service-body">
+               Rapid prototyping of generative AI systems with a focus on practical workflows, multimodal reasoning, and clearly defined outcomes.
+              </p>
+              <div class="tags">
+                <span class="tag">LLMs</span>
+                <span class="tag">Multimodal</span>
+                <span class="tag">RAG</span>
+              </div>
+            </div>
+            <div class="service-cell reveal" style="--delay: 0.12s">
+              <span class="service-num">04</span>
+              <div class="service-media">
+                <img
+                  class="card-image"
+                  src="images/Services POC Development.png"
+                  alt="POC development service visual"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="service-title">Applied AI Prototyping</h3>
+              <p class="service-body">
+                Turning unclear requirements into experiments, hardware choices,
+                and realistic deployment paths. Discovery &rarr; scoping &rarr;
+                working prototype.
+              </p>
+              <div class="tags">
+                <span class="tag">Discovery</span>
+                <span class="tag">System Design</span>
+                <span class="tag">Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">How I work</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                A simple delivery rhythm<br /><em>that keeps scope grounded</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              The process stays lightweight: understand the real constraint,
+              build something useful fast, and leave you with a practical path
+              forward.
+            </p>
+          </div>
+
+          <div class="process-steps">
+            <article class="process-step reveal">
+              <span class="process-num">01</span>
+              <div class="process-media">
+                <img
+                  class="card-image"
+                  src="images/Process Section Discovery.png"
+                  alt="Discovery stage visual for computer vision consulting"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="process-title">Discovery</h3>
+              <p class="process-body">
+                We define the use case, constraints, success criteria, and
+                whether the problem is actually a good fit for computer vision
+                or multimodal AI.
+              </p>
+            </article>
+            <article class="process-step reveal" style="--delay: 0.06s">
+              <span class="process-num">02</span>
+              <div class="process-media">
+                <img
+                  class="card-image"
+                  src="images/Process Section Prototype.png"
+                  alt="Prototype stage visual for computer vision projects"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="process-title">Prototype</h3>
+              <p class="process-body">
+                I build a focused proof of concept with the shortest path to
+                learning: model choice, dataset assumptions, evaluation, and
+                clear tradeoffs.
+              </p>
+            </article>
+            <article class="process-step reveal" style="--delay: 0.12s">
+              <span class="process-num">03</span>
+              <div class="process-media">
+                <img
+                  class="card-image"
+                  src="images/Process Section Deployment Support.png"
+                  alt="Deployment support stage visual for edge AI systems"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="process-title">Deployment support</h3>
+              <p class="process-body">
+                If the prototype is viable, I help translate it into a practical
+                deployment path with optimization, runtime choices, and
+                realistic next steps.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Background</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                Applied AI experience,<br /><em>kept intentionally general</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              This section summarizes the kind of technical work I bring into
+              engagements without sharing confidential employer or client
+              material.
+            </p>
+          </div>
+
+          <div class="section-banner reveal" style="--delay: 0.14s">
+            <img
+              class="banner-image"
+              src="images/Experience Section Background Visual.png"
+              alt="Experience section visual representing applied computer vision work"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="exp-list">
+            <div class="exp-item reveal">
+              <div class="exp-meta">
+                <span class="exp-period">2024 &mdash; 2026</span>
+                <p class="exp-company">
+                  Computer Vision Engineer at Startup<br />Hyderabad, India
+                </p>
+              </div>
+              <div class="exp-body" data-year="'24">
+                <h3 class="exp-role">Computer Vision Engineer</h3>
+                <ul class="exp-list-items">
+                  <li>
+                    Built and iterated on detection, segmentation, keypoint,
+                    classification, and tracking pipelines for real-world use
+                    cases.
+                  </li>
+                  <li>
+                    Worked across dataset preparation, evaluation, debugging,
+                    model selection, and deployment-aware optimization.
+                  </li>
+                  <li>
+                    Scoped practical proofs of concept with attention to
+                    constraints, feasibility, and next-step decision making.
+                  </li>
+                  <li>
+                    Prefer clear success criteria, honest tradeoffs, and systems
+                    that can survive outside a demo environment.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-item reveal" style="--delay: 0.08s">
+              <div class="exp-meta">
+                <span class="exp-period">Jul &ndash; Sep 2024</span>
+                <p class="exp-company">
+                  Meta Scifor Technologies<br />Bangalore, Remote
+                </p>
+              </div>
+              <div class="exp-body" data-year="'24">
+                <h3 class="exp-role">AI Training Intern</h3>
+                <ul class="exp-list-items">
+                  <li>
+                    Built classification, detection, and segmentation models
+                    with <strong>TensorFlow, PyTorch, and scikit-learn</strong>.
+                  </li>
+                  <li>
+                    Created defect-detection demos and document-processing
+                    prototypes for rapid experimentation.
+                  </li>
+                  <li>
+                    Implemented OpenCV-based modules for frame-wise inference,
+                    motion detection, and object tracking.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Focus Areas</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                The kinds of problems<br /><em>I can help solve</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              These are representative capability areas, intentionally described
+              at a general level rather than tied to confidential project work.
+            </p>
+          </div>
+
+          <div class="section-banner reveal" style="--delay: 0.14s">
+            <img
+              class="banner-image"
+              src="images/Projects Section Header Visual.png"
+              alt="Relevant work section visual collage of applied AI systems"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="work-gallery-wrap reveal" style="--delay: 0.16s">
+            <div
+              class="circular-gallery"
+              data-circular-gallery
+              data-bend="2.6"
+              data-text-color="#ece7df"
+              data-border-radius="0.05"
+              data-scroll-speed="1.7"
+              data-scroll-ease="0.045"
+              tabindex="0"
+              role="region"
+              aria-label="Circular capability gallery. Use left and right arrow keys to navigate."
+            ></div>
+          </div>
+
+          <div class="projects-grid">
+            <a
+              class="project-cell reveal"
+              style="--delay: 0s"
+              href="https://github.com/diaz3z/ChessSense-AI"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="project-num">Capability area</span>
+              <div class="project-media">
+                <img
+                  class="project-image"
+                  src="images/ChessSense-AI.png"
+                  alt="Preview of the ChessSense-AI project"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="project-title">Camera-to-Decision Pipelines</h3>
+              <p class="project-summary">
+                End-to-end systems that move from image input through inference,
+                post-processing, and business-ready outputs.
+              </p>
+              <div class="tags">
+                <span class="tag">Inference</span>
+                <span class="tag">Post-processing</span>
+                <span class="tag">Integration</span>
+              </div>
+              <p class="project-body">
+                A good fit when success depends on the whole workflow, not only
+                the model checkpoint.
+              </p>
+              <p class="project-note">GitHub &middot; ChessSense-AI</p>
+            </a>
+            <div class="project-cell reveal" style="--delay: 0.06s">
+              <span class="project-num">Capability area</span>
+              <div class="project-media">
+                <img
+                  class="project-image"
+                  src="images/Edge Inference Optimization.png"
+                  alt="Preview for edge and runtime optimization capability"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="project-title">Edge and Runtime Optimization</h3>
+              <p class="project-summary">
+                Improving inference speed, export paths, and runtime behavior so
+                models work better on the hardware you actually have.
+              </p>
+              <div class="tags">
+                <span class="tag">TensorRT</span>
+                <span class="tag">ONNX Runtime</span>
+                <span class="tag">Profiling</span>
+              </div>
+              <p class="project-body">
+                Best for teams that already have a model and need help making it
+                faster, lighter, or more deployable.
+              </p>
+              <p class="project-note">Performance &middot; Deployment support</p>
+            </div>
+            <div class="project-cell reveal" style="--delay: 0.12s">
+              <span class="project-num">Capability area</span>
+              <div class="project-media">
+                <img
+                  class="project-image"
+                  src="images/POC-to-Production Translation.png"
+                  alt="Preview for POC scoping and validation capability"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="project-title">Validation and Technical Scoping</h3>
+              <p class="project-summary">
+                Turning ambiguous ideas into a practical first experiment,
+                sensible evaluation plan, and a realistic next step.
+              </p>
+              <div class="tags">
+                <span class="tag">Discovery</span>
+                <span class="tag">System Design</span>
+                <span class="tag">POCs</span>
+              </div>
+              <p class="project-body">
+                This is usually the highest-leverage point early on: better
+                scoping, fewer bad assumptions, and faster learning.
+              </p>
+              <p class="project-note">Consulting &middot; Feasibility work</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blogs">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Writing</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                Thoughts &amp; learnings<br /><em>from the field</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              I occasionally write about computer vision, my experiences building solutions, and technical concepts to help others in the space.
+            </p>
+          </div>
+
+          <div class="blogs-grid">
+            <a
+              class="blog-card reveal"
+              style="--delay: 0s"
+              href="https://medium.com/@diaz3z/what-building-computer-vision-solutions-across-industries-taught-me-in-under-a-year-67000328ffb1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="blog-media">
+                <img
+                  class="blog-image"
+                  src="medium_blog_imgs/What building computer vision solutions across industries taught me in under a year.png"
+                  alt="What building computer vision solutions across industries taught me in under a year"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="blog-title">What building computer vision solutions across industries taught me in under a year</h3>
+              <p class="blog-note">Medium &middot; Article</p>
+            </a>
+            <a
+              class="blog-card reveal"
+              style="--delay: 0.06s"
+              href="https://medium.com/@diaz3z/what-is-camera-calibration-how-it-helps-in-computer-vision-tasks-f740306c7246"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="blog-media">
+                <img
+                  class="blog-image"
+                  src="medium_blog_imgs/What is Camera Calibration How It Helps in Computer Vision Tasks.png"
+                  alt="What is Camera Calibration How It Helps in Computer Vision Tasks"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="blog-title">What is Camera Calibration How It Helps in Computer Vision Tasks</h3>
+              <p class="blog-note">Medium &middot; Article</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Why work with me</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                Direct collaboration,<br /><em>practical decisions</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              I approach each engagement simply: be clear, choose a practical
+              scope, and deliver work that helps you move forward.
+            </p>
+          </div>
+
+          <div class="about-body">
+            <div class="about-left reveal">
+              <div class="about-media">
+                <img
+                  class="about-image"
+                  src="images/portrait.jpg"
+                  <!-- src="images/About Section.png" -->
+                  alt="About section visual for direct technical collaboration"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="about-quote">
+                "You won't be hiring an agency. You'll be working directly with
+                the engineer building the solution."
+              </p>
+              <p class="about-text">
+                I don't overpromise. I prefer understanding the real use case,
+                identifying risks early, building the right proof of concept,
+                and optimizing only where it matters.
+              </p>
+              <p class="about-text">
+                If we work together, you can expect direct communication,
+                technical ownership, and an engineer who cares whether the
+                system is usable &mdash; not just impressive in isolation.
+              </p>
+            </div>
+            <div class="about-right reveal" style="--delay: 0.08s">
+              <div class="about-card">
+                <p class="about-card-label">Current Positioning</p>
+                <p class="about-card-text">
+                  I am opening selective availability for freelance
+                  collaborations focused on applied computer vision and scoped
+                  AI builds.
+                </p>
+              </div>
+              <div class="about-card">
+                <p class="about-card-label">Before We Work Together</p>
+                <p class="about-card-text">
+                  My resume is currently being updated after a recent role
+                  transition. This site is the best current summary of my work,
+                  strengths, and freelance direction.
+                </p>
+              </div>
+              <div class="about-card">
+                <p class="about-card-label">Best Fit Engagements</p>
+                <p class="about-card-text">
+                  Prototypes, model debugging, optimization, edge deployment
+                  support, and applied CV builds with clear goals and realistic
+                  timelines.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrap">
+          <div class="section-header">
+            <div class="section-header-left">
+              <p class="section-label reveal">Contact</p>
+              <h2 class="section-h2 reveal" style="--delay: 0.06s">
+                Have a project?<br /><em>Let's talk scope.</em>
+              </h2>
+            </div>
+            <p class="section-desc reveal" style="--delay: 0.1s">
+              Best fit for focused freelance work: prototypes, model debugging,
+              optimization, edge deployment, and applied CV with clear goals.
+            </p>
+          </div>
+
+          <div class="section-banner reveal" style="--delay: 0.14s">
+            <img
+              class="banner-image"
+              src="images/Contact Section.png"
+              alt="Contact section visual for AI consulting and collaboration"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-item reveal" href="mailto:mdzaid.dev@gmail.com">
+              <span class="contact-type">Email</span>
+              <span class="contact-value">mdzaid.dev@gmail.com</span>
+              <span class="contact-arrow">Send project brief &rarr;</span>
+            </a>
+            <a
+              class="contact-item reveal"
+              style="--delay: 0.06s"
+              href="tel:+919997539982"
+            >
+              <span class="contact-type">Phone</span>
+              <span class="contact-value">+91 99975 39982</span>
+              <span class="contact-arrow">Call to discuss &rarr;</span>
+            </a>
+            <a
+              class="contact-item reveal"
+              style="--delay: 0.12s"
+              href="https://www.linkedin.com/in/mohammad-zaid-3z/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-type">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/mohammad-zaid-3z</span>
+              <span class="contact-arrow">See profile &rarr;</span>
+            </a>
+            <a
+              class="contact-item reveal"
+              style="--delay: 0.18s"
+              href="https://github.com/diaz3z"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-type">GitHub</span>
+              <span class="contact-value">github.com/diaz3z</span>
+              <span class="contact-arrow">Review code &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-watermark" aria-hidden="true">MZ</div>
+      <div class="wrap footer-inner">
+        <p class="footer-copy">
+          &copy; 2026 Mohammad Zaid. Computer Vision Engineer.
+        </p>
+        <p class="footer-mark">MZ</p>
+      </div>
+    </footer>
+
+    <script src="script.js?v=20260409-6"></script>
+    <script type="module" src="components.js?v=20260630-1"></script>
+  </body>
+</html>
