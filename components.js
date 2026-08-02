@@ -33,6 +33,7 @@ const debounce = (func, wait) => {
 };
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isCoarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
 function parseHexColor(hex) {
   const fallback = "#ffffff";
@@ -234,6 +235,15 @@ class MetaBalls {
     this.container.addEventListener("pointerenter", this.onPointerEnter);
     this.container.addEventListener("pointerleave", this.onPointerLeave);
 
+    this.running = true;
+    this.visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        this.running = entry.isIntersecting;
+      },
+      { rootMargin: "240px" },
+    );
+    this.visibilityObserver.observe(this.container);
+
     this.resize();
     this.startTime = performance.now();
     this.raf = requestAnimationFrame(this.update.bind(this));
@@ -262,7 +272,7 @@ class MetaBalls {
 
   update(now) {
     this.raf = requestAnimationFrame(this.update.bind(this));
-    if (document.hidden) return;
+    if (!this.running || document.hidden) return;
     const elapsed = (now - this.startTime) * 0.001;
     this.program.uniforms.iTime.value = elapsed;
 
@@ -667,7 +677,7 @@ class CircularGallery {
     this.renderer = new Renderer({
       alpha: true,
       antialias: true,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      dpr: Math.min(window.devicePixelRatio || 1, 1.5),
     });
     this.gl = this.renderer.gl;
     this.gl.clearColor(0, 0, 0, 0);
@@ -676,6 +686,14 @@ class CircularGallery {
     this.camera.fov = 45;
     this.camera.position.z = 20;
     this.scene = new Transform();
+    this.running = true;
+    this.visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        this.running = entry.isIntersecting;
+      },
+      { rootMargin: "240px" },
+    );
+    this.visibilityObserver.observe(this.container);
     this.onResize();
     this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 });
     this.createMedias();
@@ -685,12 +703,12 @@ class CircularGallery {
 
   createMedias() {
     const fallbackItems = [
-      { image: "images/ChessSense-AI.png", text: "Camera to Decision" },
-      { image: "images/Edge Inference Optimization.png", text: "Edge Optimization" },
-      { image: "images/POC-to-Production Translation.png", text: "Technical Scoping" },
-      { image: "images/Services Computer Vision Systems.png", text: "Vision Systems" },
-      { image: "images/Services GenAI Prototypes.png", text: "GenAI Prototypes" },
-      { image: "images/Process Section Deployment Support.png", text: "Deployment Support" },
+      { image: "images/ChessSense-AI.webp", text: "Camera to Decision" },
+      { image: "images/Edge Inference Optimization.webp", text: "Edge Optimization" },
+      { image: "images/POC-to-Production Translation.webp", text: "Technical Scoping" },
+      { image: "images/Services Computer Vision Systems.webp", text: "Vision Systems" },
+      { image: "images/Services GenAI Prototypes.webp", text: "GenAI Prototypes" },
+      { image: "images/Process Section Deployment Support.webp", text: "Deployment Support" },
     ];
     const galleryItems = this.items?.length ? this.items : fallbackItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -782,7 +800,7 @@ class CircularGallery {
   }
 
   update() {
-    if (document.hidden) {
+    if (!this.running || document.hidden) {
       this.raf = requestAnimationFrame(this.update.bind(this));
       return;
     }
@@ -948,7 +966,7 @@ void main() {
 
 function initFloatingLines() {
   const container = document.querySelector("[data-floating-lines]");
-  if (!container || prefersReducedMotion) return;
+  if (!container || prefersReducedMotion || isCoarsePointer) return;
 
   const scene = new Scene();
   const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -961,7 +979,7 @@ function initFloatingLines() {
   let targetInfluence = 0;
   let currentInfluence = 0;
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setPixelRatio(1);
   renderer.domElement.style.mixBlendMode = "screen";
   container.appendChild(renderer.domElement);
 
@@ -1032,22 +1050,41 @@ function initTextPressure() {
     const spans = Array.from(title.querySelectorAll("span"));
     const cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const mouse = { ...cursor };
+    let charCenters = [];
+    let maxDist = 1;
 
     const setSize = () => {
       const width = container.getBoundingClientRect().width;
       title.style.fontSize = `${Math.max(width / (chars.length / 1.8), minFontSize)}px`;
     };
 
+    const measure = () => {
+      const titleRect = title.getBoundingClientRect();
+      maxDist = Math.max(titleRect.width / 2, 1);
+      charCenters = spans.map((span) => {
+        const rect = span.getBoundingClientRect();
+        return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      });
+    };
+
+    let scrollPending = false;
+    const scheduleMeasure = () => {
+      if (scrollPending) return;
+      scrollPending = true;
+      requestAnimationFrame(() => {
+        measure();
+        scrollPending = false;
+      });
+    };
+
     const animate = () => {
       mouse.x += (cursor.x - mouse.x) / 15;
       mouse.y += (cursor.y - mouse.y) / 15;
-      const titleRect = title.getBoundingClientRect();
-      const maxDist = titleRect.width / 2;
 
-      spans.forEach((span) => {
-        const rect = span.getBoundingClientRect();
-        const dx = mouse.x - (rect.left + rect.width / 2);
-        const dy = mouse.y - (rect.top + rect.height / 2);
+      spans.forEach((span, i) => {
+        const center = charCenters[i] || { x: 0, y: 0 };
+        const dx = mouse.x - center.x;
+        const dy = mouse.y - center.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const force = clamp(1 - distance / maxDist, 0, 1);
         const weight = Math.round(160 + force * 720);
@@ -1064,8 +1101,11 @@ function initTextPressure() {
       cursor.x = event.clientX;
       cursor.y = event.clientY;
     }, { passive: true });
-    window.addEventListener("resize", debounce(setSize, 100));
+    window.addEventListener("resize", debounce(() => { setSize(); measure(); }, 100));
+    window.addEventListener("scroll", scheduleMeasure, { passive: true });
+    document.fonts?.ready?.then(() => { setSize(); measure(); }).catch(() => {});
     setSize();
+    measure();
     animate();
   });
 }
@@ -1077,7 +1117,7 @@ function initVisualComponents() {
   initPillNav();
 
   document.querySelectorAll("[data-metaballs]").forEach((element) => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isCoarsePointer) return;
     new MetaBalls(element, datasetOptions(element));
   });
 

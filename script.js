@@ -34,9 +34,21 @@
     progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
   };
 
+  let scrollTicking = false;
+  const onScroll = () => {
+    if (scrollTicking) {
+      return;
+    }
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      updateNavAndProgress();
+      scrollTicking = false;
+    });
+  };
+
   updateNavAndProgress();
-  window.addEventListener("scroll", updateNavAndProgress, { passive: true });
-  window.addEventListener("resize", updateNavAndProgress);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
 
   const closeMobileMenu = () => {
     if (!navToggle || !mobileMenu) {
