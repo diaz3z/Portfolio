@@ -217,7 +217,12 @@ body.cursor-click #cursor-ring {
   z-index: 1;
 }
 
+main .wrap {
+  padding: 0 clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
 #services,
+#projects,
 #experience,
 #blogs,
 #contact {
@@ -2206,6 +2211,10 @@ footer {
     width: calc(100% - 28px);
   }
 
+  main .wrap {
+    padding: 0 1rem;
+  }
+
   .hero-title {
     font-size: clamp(3rem, 14vw, 4.8rem);
   }
@@ -2765,59 +2774,6 @@ footer {
   height: 100%;
 }
 
-.work-gallery-wrap {
-  position: relative;
-  height: min(580px, 66vw);
-  min-height: 390px;
-  margin: 0 0 42px;
-  border-block: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 50% 10%, rgba(200, 240, 96, 0.07), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
-  overflow: hidden;
-}
-
-.work-gallery-wrap::before,
-.work-gallery-wrap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 18%;
-  pointer-events: none;
-}
-
-.work-gallery-wrap::before {
-  left: 0;
-  background: linear-gradient(90deg, #0a0a0a, rgba(10, 10, 10, 0));
-}
-
-.work-gallery-wrap::after {
-  right: 0;
-  background: linear-gradient(270deg, #0a0a0a, rgba(10, 10, 10, 0));
-}
-
-.circular-gallery {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.circular-gallery:active {
-  cursor: grabbing;
-}
-
-.circular-gallery:focus-visible {
-  outline: 1px solid var(--accent);
-  outline-offset: -8px;
-}
-
-.circular-gallery canvas {
-  display: block;
-}
-
 @media (max-width: 900px) {
   .pill-nav-container {
     justify-content: space-between;
@@ -2826,11 +2782,6 @@ footer {
   .pill-nav {
     width: 100%;
     justify-content: space-between;
-  }
-
-  .work-gallery-wrap {
-    height: 430px;
-    min-height: 360px;
   }
 }
 
@@ -2856,12 +2807,6 @@ footer {
     display: flex;
   }
 
-  .work-gallery-wrap {
-    height: 380px;
-    min-height: 340px;
-    margin-bottom: 28px;
-  }
-
   .metaballs-container {
     opacity: 0.22;
   }
@@ -2883,10 +2828,5 @@ footer {
   .mobile-menu-popover {
     left: 14px;
     right: 14px;
-  }
-
-  .work-gallery-wrap {
-    height: 340px;
-    min-height: 320px;
   }
 }
